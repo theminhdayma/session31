@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function check(str, target) {
+        return str.endsWith(target);
+        // Hàm endsWith() để kiểm tra xem chuỗi str có kết thúc bằng chuỗi target không
+      }
+
+      let str = "Nguyễn Thế Minh";
+      let target1 = "inh";
+      console.log(check(str, target1));
+      let target2 = "inh2";
+      console.log(check(str, target2));
+      let target3 = "Minh";
+      console.log(check(str, target3));
+      let target4 = "minh";
+      console.log(check(str, target4));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function maxSubArraySum(arr, n) {
+        if (n > arr.length) {
+          console.log("Không hợp lệ");
+        } else {
+          let sum = 0;
+          let maxSum = 0;
+          let arrChild = [];
+
+          for (let i = 0; i < n; i++) {
+            arrChild.push(arr[i]);
+            maxSum += arr[i];
+          }
+          sum = maxSum;
+
+          // Duyệt qua các phần tử kế tiếp và cập nhật tổng lớn nhất
+          for (let i = n; i < arr.length; i++) {
+            sum = sum - arr[i - n] + arr[i];
+            maxSum = Math.max(maxSum, sum); // lấy giá trị lớn nhất 
+          }
+
+          console.log("Mảng con có tổng lớn nhất là:", arrChild);
+          console.log("Tổng các phần tử trong mảng con lớn nhất là:", maxSum);
+        }
+      }
+
+      let arr = [4, 5, 8, 2, 4, 9, 3, 4, 7, 9, 1, 3, 5, 7, 3, 1, 4, 6, 8, 3, 2];
+
+      let a = parseInt(prompt("Nhập số ngẫu nhiên"));
+      maxSubArraySum(arr, a);
+    </script>
+  </body>
+</html>

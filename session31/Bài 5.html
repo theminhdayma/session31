@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function chunkArrayInGroups(arr, size) {
+        let result = [];
+        for (let i = 0; i < arr.length; i += size) {
+          result.push(arr.slice(i, i + size));
+        }
+        console.log(result);
+      }
+
+      let arr = [3, 4, 7, "a", "h", 4, "e", 8, 0, "a", "Q", 6, "G", "t"];
+      let a = parseInt(prompt("Nhậ vào số nguyên bất kỳ"));
+      console.log("Số phần tử trong mảng con là: " + a);
+      console.log("Mảng sau khi được chia nhỏ là:");
+      chunkArrayInGroups(arr, a);
+    </script>
+  </body>
+</html>

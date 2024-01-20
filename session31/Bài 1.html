@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function check(str) {
+        let words = str.split(" ");
+
+        let count = 0;
+        let characters = " ";
+        let arr = [];
+
+        for (let i = 0; i < words.length; i++) {
+          let word = words[i];
+          if (word.length > count) {
+            characters = word;
+            count = word.length;
+          }
+        }
+        console.log([characters, count]);
+      }
+      let str = "The quick browns fox jumped over the lazy dog";
+
+      console.log("Từ dài nhất trong chuỗi là: ");
+      check(str);
+    </script>
+  </body>
+</html>

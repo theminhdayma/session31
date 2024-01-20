@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function truecase(str, number) {
+        if (str.length > number) {
+          var result = str.slice(0, number);
+        }
+        return result;
+      }
+
+      let str = "Nguyễn Thế Minh";
+      let a = parseInt(prompt("Nhập vào 1 số nguyên bất kỳ"));
+      console.log("Chuỗi sau khi rút gọn là: " + truecase(str, a));
+    </script>
+  </body>
+</html>

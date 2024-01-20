@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+      // Filter dùng để lặp qua các  pt của mảng và trả về mảng mới có các phần tử thỏa mãn dk
+      function fakeFilter(arr, callback) {
+        let arrayEmpty = [];
+        // Kiểm tra xem arr có phải mảng  không?
+        if (!Array.isArray(arr)) {
+          throw new Error("Tham số truyền vào không phải là mảng");
+        }
+        // Kiểm tra callback có phải là function không?
+        if (!(typeof callback == "function")) {
+          throw new Error("Tham số truyền vào không phải là một function");
+        }
+
+        // Lặp qua các phần tử của mảng
+        for (let i = 0; i < arr.length; i++) {
+          // Kiểm tra định dạng các tham số truyền vào trong callback
+          if (callback(arr[i])) {
+            arrayEmpty.push(arr[i]);
+          }
+        }
+
+        return arrayEmpty;
+      }
+
+      const filterNumber1 = fakeFilter(nums, function (number) {
+        return number % 2 === 0;
+      });
+      console.log("Các số chẵn: " + filterNumber1);
+
+      const filterNumber2 = fakeFilter(nums, function (number) {
+        return number % 2 !== 0;
+      });
+      console.log("Các số lẻ: " + filterNumber2);
+    </script>
+  </body>
+</html>

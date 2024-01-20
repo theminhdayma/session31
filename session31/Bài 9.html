@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function sumZero(arr) {
+        let arrChild = [];
+        let found = false;
+        for (let i = 0; i < arr.length; i++) {
+          let sum = 0;
+          for (let j = i; j < arr.length; j++) {
+            sum = arr[i] + arr[j];
+            if (sum === 0) {
+              found = true;
+              arrChild.push(arr[i], arr[j]);
+              return arrChild;
+            }
+          }
+        }
+        if (!found) {
+          console.log("Không có cặp số thỏa mãn");
+        }
+      }
+
+      let arr = [4, 2, 7, -2, -4, -7, -1, 3, 8, 9];
+
+      for (let i = 0; i < arr.length - 1; i++) {
+        for (let j = 0; j < arr.length - i - 1; j++) {
+          if (arr[j] > arr[j + 1]) {
+            let temp = arr[j];
+            arr[j] = arr[j + 1];
+            arr[j + 1] = temp;
+          }
+        }
+      }
+      console.log("Mảng sau khi sắp xếp là: " + arr);
+      console.log("Cặp số đầu tiên có tổng bằng 0 là: " + sumZero(arr));
+    </script>
+  </body>
+</html>

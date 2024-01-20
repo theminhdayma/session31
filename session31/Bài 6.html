@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let num = [10, 4, 6, 9, 19];
+
+      function fakeFind(arr, fn) {
+        for (let i = 0; i < arr.length; i++) {
+          let test = fn(arr[i]); // true or false
+          if (test === true) {
+            return arr[i];
+          }
+        }
+        return undefined; // Trả về undefined nếu không tìm thấy phần tử thỏa mãn
+      }
+
+      let result1 = fakeFind(num, function (e) {
+        return e === 10;
+      });
+      let result2 = fakeFind(num, function (e) {
+        return e === 100;
+      });
+      let result3 = fakeFind(num, function (e) {
+        return e === 9;
+      });
+      let result4 = fakeFind(num, function (e) {
+        return e === 17;
+      });
+
+      console.log(result1); // 10
+      console.log(result2); // undefined
+      console.log(result3); // 9
+      console.log(result4); // undefined
+    </script>
+  </body>
+</html>
